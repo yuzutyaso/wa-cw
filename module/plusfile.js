@@ -9,7 +9,7 @@ var randomIdpattern = 'aA0'
 
 async function file(body, message, messageId, roomId, accountId) {
   if (message) {
-    const url = body.replace(/\[To:\d+\]和歌さん|\/file\/|\s+/g, "");
+    const url = body.replace(/\[To:\d+\]ゆずbotさん|\/file\/|\s+/g, "");
     const filename = randomId(randomIdlen, randomIdpattern);
     await filetocw.sendFile(roomId, url, filename, accountId, messageId);
   }else{
