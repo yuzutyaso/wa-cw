@@ -9,7 +9,7 @@ const filetocw = require('../suisho/file');
 
 //Makeitaquote
 async function makeitaquote(body, message, messageId, roomId, accountId) {
-  const chatworkUrl = body.replace(/\[To:\d+\]和歌さん|\/miaq\/|\s+/g, "");
+  const chatworkUrl = body.replace(/\[To:\d+\]ゆずbotさん|\/miaq\/|\s+/g, "");
   const miaqIds = [...chatworkUrl.matchAll(/(?<=rid\d+-)(\d+)/g)].map(match => match[0]);
   const roomIds = [...chatworkUrl.matchAll(/(?<=rid)(\d+)(?=-)/g)].map(match => match[0]);
   if (miaqIds.length === 0) {
