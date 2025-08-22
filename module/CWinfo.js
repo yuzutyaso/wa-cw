@@ -75,20 +75,12 @@ async function Roominfo(body, message, messageId, roomId, accountId) {
 
 //ルームの情報(部屋リンクあり)
 async function Roominfos(body, message, messageId, roomId, accountId) {
-  if(message == 391163626){
-    await messageedit.sendchatwork(`[rp aid=${accountId} to=${roomId}-${messageId}][pname:${accountId}]さん\n[info][title]ペンギン水族館[/title]メンバー数: Error
-メッセージ数: Error
-ファイル数: Error
-タスク数: Error
-アイコンURL: https://appdata.chatwork.com/icon/6MoBPdml78.png[info]招待リンクを取得できませんでした[/info][/info]`, roomId);
-    return;
-  }
   try {
     const roominfos = await getCWdata.getChatworkRoom(message);
     const roomlink = await getCWdata.getChatworkRoomlink(message);
     const roommembernumber = await getCWdata.getChatworkRoomMemberCount(message);
     
-    const room = `[info][title]${roominfos.name}[/title]メンバー数: ${roommembernumber}\nメッセージ数: ${roominfos.message_num}\nファイル数: ${roominfos.file_num}\nタスク数: ${roominfos.task_num}\nアイコンURL: ${roominfos.icon_path.replace(/rsz\./g, '')}[info]${roomlink}[/info][/info]`;
+    const room = `[info][title]${roominfos.name}[/title]メンバー数: ${roommembernumber}\nメッセージ数: ${roominfos.message_num}\nファイル数: ${roominfos.file_num}\nタスク数: ${roominfos.task_num}\nアイコンURL: ${roominfos.icon_path.replace(/rsz\./g, '')}[/info]`;
     
     await messageedit.sendchatwork(`[rp aid=${accountId} to=${roomId}-${messageId}][pname:${accountId}]さん\n${room}`, roomId);
   } catch (error) {
