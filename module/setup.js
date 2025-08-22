@@ -13,7 +13,7 @@ const getCWdata = require('../suisho/cwdata');
 //Help
 async function wakamehelp(body, message, messageId, roomId, accountId) {
   await messageedit.sendchatwork(
-    `[rp aid=${accountId} to=${roomId}-${messageId}][pname:${accountId}]さん[info][title]ヘルプ[/title]こんにちは！これは和歌botのヘルプです。[/info]`,
+    `[rp aid=${accountId} to=${roomId}-${messageId}][pname:${accountId}]さん[info][title]ヘルプ[/title]こんにちは！これはゆずbotのヘルプです。[/info]`,
     roomId
   );
 }
@@ -21,7 +21,7 @@ async function wakamehelp(body, message, messageId, roomId, accountId) {
 //SetUp
 async function wakamesetup(body, message, messageId, roomId, accountId) {
   await messageedit.sendchatwork(
-    `[rp aid=${accountId} to=${roomId}-${messageId}][pname:${accountId}]さん[info][title]ヘルプ[/title]こんにちは！これは和歌botのヘルプです。[/info]`,
+    `[rp aid=${accountId} to=${roomId}-${messageId}][pname:${accountId}]さん[info][title]ヘルプ[/title]こんにちは！これはゆずbotのヘルプです。[/info]`,
     roomId
   );
 }
