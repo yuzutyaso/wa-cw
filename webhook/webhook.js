@@ -17,16 +17,16 @@ async function getchat(req, res) {
   const roomId = req.body.webhook_event.room_id;
   const messageId = req.body.webhook_event.message_id;
   
-  if (accountId === 9912086) {
+  if (accountId === 10617115) {
     return res.sendStatus(200);
   }
   
-  if (roomId === 401530604) {
+  if (roomId === 407925089) {
     await wakameAI.chatwithAI(body, message, messageId, roomId, accountId);
     return res.sendStatus(200);
   }
   
-  if (body.includes("[To:9912086]")) {
+  if (body.includes("[To:10617115]")) {
     return res.sendStatus(200);
   }
 
@@ -35,20 +35,13 @@ async function getchat(req, res) {
     return res.sendStatus(200);
   }
   
-  if (message === "test tester") {
+  if (message === "test") {
     await wakamesetup.test(body, message, messageId, roomId, accountId);
     return res.sendStatus(200);
   }
   
-  if (/^\[info\]\[title\]\[dtext:chatroom_chat_edited\]\[\/title\]\[dtext:chatroom_member_is\]\[piconname:\d+\]\[dtext:chatroom_added\]\[\/info\]$/.test(message)) {
-    await wakamesetup.welcomedayo(body, message, messageId, roomId, accountId);
-    return res.sendStatus(200);
-  }
   
-  if (message === "[info][dtext:chatroom_chat_joined][/info]") {
-    await wakamesetup.welcomenanodayo(body, message, messageId, roomId, accountId);
-    return res.sendStatus(200);
-  }
+  
 
   res.sendStatus(200);
 }
