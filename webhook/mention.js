@@ -71,7 +71,7 @@ async function mentionWebhook(req, res) {
     const roomId = req.body.webhook_event.room_id;
     const messageId = req.body.webhook_event.message_id;
     const body = req.body.webhook_event.body;  
-    const message = body.replace(/\[To:\d+\]和歌さん|\/.*?\/|\s+/g, "");
+    const message = body.replace(/\[To:\d+\ゆずbotさん|\/.*?\/|\s+/g, "");
 
     try {
         if (body.includes("削除")) {
@@ -84,16 +84,11 @@ async function mentionWebhook(req, res) {
             return res.sendStatus(200);
         }
 
-        if (body.includes("[rp aid=9912086]")) {
+        if (body.includes("[rp aid=10617115]")) {
             return res.sendStatus(200);
         }
 
-        if (body.includes("toall")) {
-            if(roomId === 382774811){
-            await jihouchan.omakasendFile("", "", messageId, roomId, accountId);
-            }
-            return res.sendStatus(200);
-        }
+        
 
         const command = getCommand(body);
         if (command && commands[command]) {
