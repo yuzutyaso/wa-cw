@@ -22,7 +22,6 @@ async function jihou(req, res) {
   const Id = req.body.checkId;
   console.log(Id)
   if (Id === "ranking") {
-    await ranking.top(396176442);
     await ranking.save();
     return res.sendStatus(200);
   }
