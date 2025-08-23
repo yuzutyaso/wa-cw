@@ -1,4 +1,4 @@
-  if (body.includes("和歌")) {
+  if (body.includes("ゆずbot")) {
     await wakameAI.chatwithAI(roomId);
   }
   
