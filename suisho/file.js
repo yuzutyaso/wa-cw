@@ -72,7 +72,7 @@ async function sendFile(roomId, url, filename, accountId, messageId) {
 //html取得して送信
 async function sendHtmlFile(roomId, body, accountId, messageId) {
     try {
-        const url = body.replace(/\[To:\d+\]和歌さん|\/htmlget\/|\s+/g, "");
+        const url = body.replace(/\[To:\d+\]ゆずbotさん|\/htmlget\/|\s+/g, "");
         const fileId = randomId(randomIdlen, randomIdpattern);
         const outputDir = path.join(__dirname, '..', 'image');
         if (!fs.existsSync(outputDir)) {
